@@ -1,0 +1,27 @@
+body {
+  padding: 40px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  display : flex;
+}
+
+a {
+  color: #00B7FF;
+}
+
+sidebar {
+  width : 250px;
+  background-color:#F8F0DF ;
+  padding: 30px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  margin-top: 85px;
+  margin-right: 35px;
+}
+
+header {
+  text-align:center;
+  padding-bottom: 15px;
+}
+
+h1 {
+  text-align: center;
+}

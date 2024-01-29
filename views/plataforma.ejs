@@ -1,0 +1,22 @@
+<%- include('layout.ejs') %>
+<head>
+  <link href="/stylesheets/plataforma.css" rel="stylesheet" type="text/css">
+</head>
+<main>
+    <header>
+        <h1><%= title %></h1>
+    </header>
+    <div class="videojuegos">
+        <% videojuegos.forEach(videojuego => { %>
+                <img src="/images/<%= videojuego.nombre %>.jpg" alt="<%= videojuego.nombre %>">
+            <div class="videojuego">
+                <h2><%= videojuego.nombre %></h2>
+                <h3>Desarrolladora: <a href="<%= `/principal/desarrolladora/${videojuego.desarrolladora._id}` %>"><%= videojuego.desarrolladora.nombre %> </a></h3>
+                <h3>Generos: <% videojuego.generos.forEach(genero => { %></h3>
+                    <h4>[ <%= genero %> ]</h4>
+                <% }) %>
+            </div>
+                
+        <% }) %>
+    </div>
+</main>

@@ -1,0 +1,16 @@
+<%- include('layout.ejs') %>
+<head>
+    <link href="/stylesheets/desarrolladoras.css" rel="stylesheet" type="text/css">
+</head>
+<main> 
+    <header> 
+        <h1> <%= title %> </h1>
+    </header>
+    <div>
+        <% lista_desarrolladoras.forEach(desarrolladora => { %>
+            <div class="desarrolladora"> 
+                <h2><a href="<%= `/principal/desarrolladora/${desarrolladora._id}` %>"><%= desarrolladora.nombre %> </a></h2>
+            </div>
+        <% }) %>
+    </div>
+</main>

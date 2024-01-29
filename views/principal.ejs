@@ -1,0 +1,17 @@
+<%- include('layout.ejs') %>
+<head>
+  <link href="/stylesheets/principal.css" rel="stylesheet" type="text/css">
+</head>
+<main>
+  <header>
+    <h1><%= title %></h1>
+  </header>
+  <div class="platforms-container">
+    <% plataformas.forEach(plataforma => { %>
+      <div class="platform"> 
+        <a href="<%= `/principal/plataforma/${plataforma._id}` %> "><img src="/images/<%= plataforma.nombre %>.jpg" alt="<%= plataforma.nombre %>"></a>
+      </div>
+    <% }) %>
+  </div>
+</main>
+

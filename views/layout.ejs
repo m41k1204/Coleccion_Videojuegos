@@ -1,0 +1,42 @@
+<!-- layout.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <!-- Link to your external CSS file -->
+    <link href="/stylesheets/layout.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <sidebar>
+        <!-- Sidebar content goes here -->
+        <ul>
+            <li><a href="/"> Homepage </a></li>
+            <li><a href="/principal/desarrolladora"> Desarrolladoras </a>
+                <ul>
+                    <li><a href="/principal/desarrolladora/crear"> Crear una nueva desarrolladora</a></li>
+                    <li><a href="/principal/desarrolladora/eliminar"> Eliminar una desarrolladora</a></li>
+                    <li><a href="/principal/desarrolladora/actualizar"> Actualizar una desarrolladora</a></li>
+                    
+                </ul>
+            </li>
+            <li> Plataformas
+                <ul> 
+                    <% plataformas.forEach(plataforma => { %>
+                        <li>
+                            <a href="<%= `/principal/plataforma/${plataforma._id}` %> "><%= plataforma.nombre %></a>
+                        </li>
+                    <% }) %>
+                    
+                </ul>
+            </li>
+        </ul>
+        
+    </sidebar>
+    <main>
+        
+    </main>
+</body>
+</html>
+
