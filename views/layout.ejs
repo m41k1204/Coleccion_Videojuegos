@@ -1,104 +1,103 @@
-
-  <ul class="nav flex-column">
-    <li class="nav-item fs-4">
-      <a class="nav-link active" aria-current="page" href="/principal"
-        >Homepage</a
-      >
-    </li>
-    <li class="nav-item dropdown fs-4">
-      <a
-        class="nav-link dropdown-toggle"
-        data-bs-toggle="dropdown"
-        role="button"
-        aria-expanded="false"
-        >Desarrolladoras</a
-      >
-      <ul class="dropdown-menu">
-        <li>
-          <a class="dropdown-item" href="/principal/desarrolladora/crear"
-            >Añadir una desarrolladora</a
-          >
-        </li>
-        <li>
-          <a class="dropdown-item" href="/principal/desarrolladora/eliminar"
-            >Eliminar una desarrolladora</a
-          >
-        </li>
-        <li>
-          <a class="dropdown-item" href="/principal/desarrolladora/actualizar"
-            >Actualizar una desarrolladora</a
-          >
-        </li>
-        <li><hr class="dropdown-divider" /></li>
-        <li>
-          <a class="dropdown-item" href="/principal/desarrolladora"
-            >Ir a desarrolladoras</a
-          >
-        </li>
-      </ul>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link fs-4"> Plataformas </a>
-      <ul class="nav flex-column mx-4">
-        <% plataformas.forEach(plataforma => { %>
-        <li class="nav-item fs-5">
-          <a
-            class="nav-link active"
-            aria-current="page"
-            href="<%= `/principal/plataforma/${plataforma._id}` %> "
-          >
-            <%= plataforma.nombre %></a
-          >
-        </li>
-        <% }) %>
-      </ul>
-    </li>
-    <li class="nav-item dropdown fs-4">
-      <a
-        class="nav-link dropdown-toggle"
-        data-bs-toggle="dropdown"
-        role="button"
-        aria-expanded="false"
-        >Videojuegos</a
-      >
-      <ul class="dropdown-menu">
-        <li>
-          <a class="dropdown-item" href="/principal/videojuego/crear"
-            >Añadir un Videojuego</a
-          >
-        </li>
-        <li>
-          <a class="dropdown-item" href="/principal/videojuego/eliminar"
-            >Eliminar un Videojuego</a
-          >
-        </li>
-        <li>
-          <a class="dropdown-item" href="/principal/videojuego/actualizar"
-            >Actualizar un Videojuego</a
-          >
-        </li>
-      </ul>
-    </li>
-    <li><hr class="divider" /></li>
-    <li class="nav-item">
-      <a class="nav-link active" href="/principal/iniciar-sesion"
-        ><button type="button" class="btn btn-outline-primary">
-          Iniciar Sesion
-        </button></a
-      >
-    </li><li class="nav-item">
-      <a class="nav-link active" href="/principal/registrarme"
-        ><button type="button" class="btn btn-outline-primary">
-          Registrarme
-        </button></a
-      >
-    </li>
-    <li class="nav-item">
-      <a class="nav-link active" href="/"
-        ><button type="button" class="btn btn-outline-primary">
-          Landing Page
-        </button></a
-      >
-    </li>
-  </ul>
-
+<ul class="nav flex-column">
+  <li class="nav-item fs-4">
+    <a class="nav-link active" aria-current="page" href="/principal"
+      >Homepage</a
+    >
+  </li>
+  <li class="nav-item dropdown fs-4">
+    <a
+      class="nav-link dropdown-toggle"
+      data-bs-toggle="dropdown"
+      role="button"
+      aria-expanded="false"
+      >Desarrolladoras</a
+    >
+    <ul class="dropdown-menu">
+      <li>
+        <a class="dropdown-item" href="/principal/desarrolladora/crear"
+          >Añadir una desarrolladora</a
+        >
+      </li>
+      <li>
+        <a class="dropdown-item" href="/principal/desarrolladora/eliminar"
+          >Eliminar una desarrolladora</a
+        >
+      </li>
+      <li>
+        <a class="dropdown-item" href="/principal/desarrolladora/actualizar"
+          >Actualizar una desarrolladora</a
+        >
+      </li>
+      <li><hr class="dropdown-divider" /></li>
+      <li>
+        <a class="dropdown-item" href="/principal/desarrolladora"
+          >Ir a desarrolladoras</a
+        >
+      </li>
+    </ul>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link fs-4"> Plataformas </a>
+    <ul class="nav flex-column mx-4">
+      <% plataformas.forEach(plataforma => { %>
+      <li class="nav-item fs-5">
+        <a
+          class="nav-link active"
+          aria-current="page"
+          href="<%= `/principal/plataforma/${plataforma._id}` %> "
+        >
+          <%= plataforma.nombre %></a
+        >
+      </li>
+      <% }) %>
+    </ul>
+  </li>
+  <li class="nav-item dropdown fs-4">
+    <a
+      class="nav-link dropdown-toggle"
+      data-bs-toggle="dropdown"
+      role="button"
+      aria-expanded="false"
+      >Videojuegos</a
+    >
+    <ul class="dropdown-menu">
+      <li>
+        <a class="dropdown-item" href="/principal/videojuego/crear"
+          >Añadir un Videojuego</a
+        >
+      </li>
+      <li>
+        <a class="dropdown-item" href="/principal/videojuego/eliminar"
+          >Eliminar un Videojuego</a
+        >
+      </li>
+      <li>
+        <a class="dropdown-item" href="/principal/videojuego/actualizar"
+          >Actualizar un Videojuego</a
+        >
+      </li>
+    </ul>
+  </li>
+  <li><hr class="divider" /></li>
+  <li class="nav-item">
+    <a class="nav-link active" href="/appid/login"
+      ><button type="button" class="btn btn-outline-primary" id="login">
+        Iniciar Sesion
+      </button></a
+    >
+  </li>
+  <li class="nav-item">
+    <a class="nav-link active" href="/principal/registrarme"
+      ><button type="button" class="btn btn-outline-primary">
+        Registrarme
+      </button></a
+    >
+  </li>
+  <li class="nav-item">
+    <a class="nav-link active" href="/"
+      ><button type="button" class="btn btn-outline-primary">
+        Landing Page
+      </button></a
+    >
+  </li>
+</ul>

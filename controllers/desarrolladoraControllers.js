@@ -7,7 +7,6 @@ const asyncHandler = require('express-async-handler');
 
 exports.index = asyncHandler(async (req, res, next) => {
     const lista_plataformas = res.locals.nombresPlataformas;
-
     
     res.render('principal', {
         title: 'Coleccion de Videojuegos',
@@ -19,8 +18,6 @@ exports.index = asyncHandler(async (req, res, next) => {
 exports.desarrolladora_lista = asyncHandler(async (req, res, next) => {
     const lista_desarrolladoras = await Desarrolladora.find().exec()
 
-    
-    
     res.render('desarrolladoras', {
         title: 'Desarrolladoras',
         lista_desarrolladoras: lista_desarrolladoras,
