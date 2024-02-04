@@ -1,22 +1,82 @@
-<%- include('layout.ejs') %>
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
-  <link href="/stylesheets/plataforma.css" rel="stylesheet" type="text/css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%- title %></title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+    <link rel="stylesheet" href="/stylesheets/plataforma.css">
 </head>
-<main>
-    <header>
-        <h1><%= title %></h1>
-    </header>
-    <div class="videojuegos">
-        <% videojuegos.forEach(videojuego => { %>
-                <img src="/images/<%= videojuego.nombre %>.jpg" alt="<%= videojuego.nombre %>">
-            <div class="videojuego">
-                <h2><%= videojuego.nombre %></h2>
-                <h3>Desarrolladora: <a href="<%= `/principal/desarrolladora/${videojuego.desarrolladora._id}` %>"><%= videojuego.desarrolladora.nombre %> </a></h3>
-                <h3>Generos: <% videojuego.generos.forEach(genero => { %></h3>
-                    <h4>[ <%= genero %> ]</h4>
-                <% }) %>
-            </div>
-                
-        <% }) %>
+
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <h1 class="text-center py-4"><%- title %></h1>
+    <div class="container-fluid g-2"></div>
+    <div class="row g-2">
+        <div class="col-md-2 border-end py-2 px-3">
+            <%- include('layout') %>
+        </div>
+        <div class="col-md-10">
+            <% for (let k=0; k < videojuegos.length; k +=2) { %>
+                <div class="row mx-2">
+                        <div class="col-md-2 img-container">
+                            <img class="mx-2" src="/images/<%= videojuegos[k].nombre %>.jpg"
+                                alt="<%= videojuegos[k].nombre %>">
+                        </div>
+                        <div class="col-md-3 mx-1">
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">
+                                    <%= videojuegos[k].nombre %>
+                                </li>
+                                <li class="list-group-item">Desarrolladora: <a class="list-group-item"
+                                        href="<%= `/principal/desarrolladora/${videojuegos[k].desarrolladora._id}` %>">
+                                        <%= videojuegos[k].desarrolladora.nombre %>
+                                    </a></li>
+                                <li class="list-group-item">Generos:
+                                    <ul class="list-inline">
+                                        <% videojuegos[k].generos.forEach(genero=> { %>
+                                            <li class="list-inline-item">[ <%= genero %> ]</li>
+                                            <% }) %>
+
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    <% if (k + 1 < videojuegos.length) { %> 
+                        <div class="col-md-2 img-container">
+                            <img class="mx-5" src="/images/<%= videojuegos[k + 1].nombre %>.jpg"
+                                alt="<%= videojuegos[k + 1].nombre %>">
+                        </div>
+                        <div class="col-md-3">
+                            <ul class="list-group list-group-flush mx-5">
+                                <li class="list-group-item">
+                                    <%= videojuegos[k + 1].nombre %>
+                                </li>
+                                <li class="list-group-item">Desarrolladora: <a class="list-group-item"
+                                        href="<%= `/principal/desarrolladora/${videojuegos[k + 1].desarrolladora._id}` %>">
+                                        <%= videojuegos[k+1].desarrolladora.nombre %>
+                                    </a></li>
+                                <li class="list-group-item">Generos:
+                                    <ul class="list-inline">
+                                        <% videojuegos[k + 1].generos.forEach(genero=> { %>
+                                            <li class="list-inline-item">[ <%= genero %> ]</li>
+                                            <% }) %>
+
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    <% } %>
+                </div>
+
+            <% } %>
+        </div>
     </div>
-</main>
+    </div>
+</body>
+
+</html>

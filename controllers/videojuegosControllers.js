@@ -1,14 +1,6 @@
 const Videojuegos = require('../models/Videojuego');
 const asyncHandler = require('express-async-handler');
 
-exports.videojuegos_lista = asyncHandler(async (req, res, next) => {
-    res.send('todavia no implementado : lista de videojuegos ');
-})
-
-exports.videojuegos_detalles = asyncHandler(async (req, res, next) => {
-    res.send(`todavia no implementado : detalles del videojuego : ${req.params.id}`)
-})
-
 exports.videojuegos_crear_get = asyncHandler(async (req, res, next) => {
     res.send('todavia no implementado : creacion de videojuego GET ')
 })

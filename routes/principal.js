@@ -31,9 +31,6 @@ router.get('/plataforma/:id', controller_plataforma.plataforma_detalles)
 
 // Routers de los videojuegos
 
-router.get('/videojuego/:id', controller_videojuego.videojuegos_detalles)
-
-router.get('/videojuego', controller_videojuego.videojuegos_lista)
 
 router.get('/videojuego/crear', controller_videojuego.videojuegos_crear_get)
 

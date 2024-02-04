@@ -6,11 +6,12 @@ const { body, validationResult } = require("express-validator");
 const asyncHandler = require('express-async-handler');
 
 exports.index = asyncHandler(async (req, res, next) => {
-    const nombresPlataformas = res.locals.nombresPlataformas;
+    const lista_plataformas = res.locals.nombresPlataformas;
+
     
     res.render('principal', {
         title: 'Coleccion de Videojuegos',
-        nombresPlataformas: nombresPlataformas,
+        lista_plataformas: lista_plataformas,
     });
 });
 
@@ -18,7 +19,7 @@ exports.index = asyncHandler(async (req, res, next) => {
 exports.desarrolladora_lista = asyncHandler(async (req, res, next) => {
     const lista_desarrolladoras = await Desarrolladora.find().exec()
 
-    console.log(lista_desarrolladoras)
+    
     
     res.render('desarrolladoras', {
         title: 'Desarrolladoras',
@@ -30,7 +31,6 @@ exports.desarrolladora_detalles = asyncHandler(async (req, res, next) => {
     try {
         const desarrolladora = await Desarrolladora.findById(req.params.id);
         const lista_videojuegos = await Videojuego.find().populate("desarrolladora")
-        console.log(lista_videojuegos)
         if (!Desarrolladora) {
             return res.status(404).send('Desarrolladora no fue encontrada');
         }

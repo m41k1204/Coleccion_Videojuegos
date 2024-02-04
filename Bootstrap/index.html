@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <title>Nested Side Navbar</title>
+</head>
+<body>
+
+  <div class="container-fluid">
+    <div class="row">
+      <!-- Sidebar -->
+      <nav id="sidebar" class="col-md-3 col-lg-2 d-md-block bg-light sidebar">
+        <div class="sidebar-sticky">
+          <ul class="nav flex-column">
+            <li class="nav-item">
+              <a class="nav-link active" href="#">
+                Dashboard
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                Nested Menu
+              </a>
+              <!-- Nested Dropdown Menu -->
+              <ul class="nav flex-column ml-3">
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Submenu 1</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Submenu 2</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Submenu 3</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+      <!-- Main Content -->
+      <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+        <!-- Your content goes here -->
+      </main>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2
+
